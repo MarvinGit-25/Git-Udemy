@@ -1,0 +1,124 @@
+git config --global user.name "nome" | cria nome de usuario
+git config --global user.email "email" | cria o email do usuario
+
+git init |inicializa um repositorio git
+git config --global init.defaultBranc nome da brach | muda o nome da branc
+
+git status | mostra o status do git 
+git add | adiciona os arquivos no git 
+git add -a | add varios arquivos
+
+git rm --cached -> nome de arqui | exclui arquivos rastreados comitado ou não comitado 
+git rm --cached -r .  -> nome de arqui | exclui varios arquivos rastreados comitado ou não comitado 
+git restore --staged -> nome de arqui |exclui arquivos só se já tiverem sido comitados
+git commit | salva no historico do git
+git diff |mostra as midificações dos arquivos que n foram salvos
+git diff --cached | mostra as midificações dos arquivos salvos e não salvos
+git log | lista os commits que foram feitos
+git log --oneline | forma reduzida de git log
+git log --stat | lista os commits que foram feitos e as modif dos arquivos
+git log --shortstat | forma reduzida de --stat
+git commit -a -m"" | faz um git add . e já commita passando a msg de commit
+git commit  --amend -m "meu commit" | faz um novo commit com a alteração da msg 
+git commit --amend --no-edit | cria um novo commit sem alterar a msg do msm.
+git commit --amend | abri o editor de texto para mudar a msg de commit
+git config --global core.editor "nome do editor --wait" | configura o editor padrão do git
+git checkout -> numero do commit | navega pelos commits
+git checkout -> nome do arquivo | volta versão anterior do msm
+git clean -f | remove arquivos não rastreados pelo git
+git reset --hard | exclui arquivos tanto da area de preparação quanto da area local
+git update-index --skip-worktree index.html | .gitignore passa a rastrear o index.html
+git update-index --no-skip-worktree index.html | desfaz o comando acima ^
+git clone | clona um repositorio local ou remotamente
+git remote -v | verifica se orepositorio esta vinculado a um servidor remoto
+git remote add origin -> url do projeto no github
+git remote set-url -> url para qual repositorio remoto vc quer apontar
+git push | envia as informações para o servidor
+git pull | traz informações do servidor 
+git branch -> nome | cria uma branch
+git branch ou git branch --list | lista as brachs
+git checkout -> nome da branch | muda de branch
+git checkout -b -> nome da branch | cria  a branch e já muda para ela
+git switch | também é usado pra criar branchs, sair e entrar nas brachs 
+git switch - | volta pra ultima branch selecionada
+git switch -c | cria uma branch
+git checkout -f -> nome da branch | muda de branch e desfaz as alterações rastreadas 
+git push -u origin -> nome da branch | envia uma branch local para o servidor 
+git branch -d -> nome da branch | apaga uma branch local
+git branch -D -> nome da branch | apaga uma branch local forçadamente
+git push --delete origin -> nome da branch | apaga uma branch remota
+git branch -m -> nome da branch | renomeia o nome se estiver dentro da branch
+git branch -m -> nome da branch = novo nome da branch | se não estiver dentro da branch
+git log -> nome da branch | mostra os commits da branch
+git merge -> nome da branch | mescla mudanças de outras branch n branch atual
+git branch --no-merged | lista as branchs que ainda não foram mescladas
+git branch --merged | lista as branchs que já foram mescladas
+git merge --abort | aborta um commit
+git reset --hard | também aborta um commit
+git tag -> nome ta tag | cria uma tag na branch atual no ultimo commit
+git tag -a -m"anotação" -> nome da tag | cria uma tag anotada
+git tag | lista as tags
+git tag -n | mostra as descrições da tag
+git tag -> nome da tag e numéro do commit | cria uma tag no commit especificado
+git tag -a -m"anotação" -> nome da tag e o numero do commit | cria uma tag anotada no commit especificado
+git push origin -> nome da tag | envia uma tag para o repositorio remoto
+git push --tags | envia todas as tags para o repositorio remoto
+git tag -d -> nome da tag | apaga a tag localmente
+git push --delete origin -> nome da tag | apaga a tag remotamente
+git stash | salva mudanças que não estao prontas para serem commitadas
+git stash apply | aplica as alterações salvas
+git stash --list | lista as stashs salvas
+git stash apply -> nome do stash | aplica um stash especifico
+git stash pop | apllica o ultimo stash e remove da lista de stash
+git stash pop -> nome do stash | aplica e remove um stash especifico
+git stash drop | remove o ultimo stash
+git stash drop -> nome do stash |remove o stash especificado
+git revert -> número do commit | revert um commit "desfaz alterações"
+git revert --no-edit | pra não aparecer o editor
+git reset --hard HEAD~  -> quantidade de commits | deleta commits
+git reset --mixed HEAD~ -> quantidade de commits | apaga commits mas não desfaz as alterações
+git reset --soft HEAD~ -> quantidade de commits |revert um commit e faz um git add
+git push --force | força os envios para o repositorio remoto
+git push --force-with-lease | força os envios para o repositorio remoto mas sem nada ser perdido
+git rebase -> nome da branch | tras mudanças da branch especificada, altera a base da ramificação do commit para outra, como se fosse um merge mas seguindo a linha do tempo de forma linear 
+git rebase --abort | aborta o rebase
+git rebase --continue
+git pull --rebase | tras mudanças do repositorio remoto recriando o commit em cima das mudanças que vieram do repositorio remoto sem fazer um commit de merge
+git fetch  origin -> informação | baixa o conteúdo remoto e não altera o estado do repositório local
+git rebase --intaractive |HEAD~ -> quantidade de commits | comprimi varios commits em um só
+git cherry-pick -> numero do commit | tras o commit especificado para a brach atual
+git bisect start | nos ajuda a identificar erros nos commits fazendo uma busca ex: c1 c2 c3 c4 c5 c6   c1----c6
+================Utilidades==================
+    COMANDO ALIAS
+alias -> git config --global alias.abreviação e o comando que se quer abreviar
+alias quando o comando tem parametro -> git config --global alias.abreve 'e o comando que se quer abreviar entre aspas simples'
+git config --global --unset alias.abreviação -> descarta as abreviações já feitas
+   
+     COMANDO GREP
+ex: tenho varias branchs, mais quero lista só as task-b2.
+  
+task-br1  task-br2  task-b2
+task-br1  task-br2  task-b2
+task-br1  task-br2  task-b2
+task-br1  task-br2  task-b2
+
+Posso usar o grep da seguinte maneira, git branch | grep b2 
+  esse comando me retornara só as task  que tem b2.
+   
+   retorno:
+     task-b2
+     task-b2
+     task-b2
+     task-b2
+
+a letra ou número que vc passa pro comando grep não necessariamente 
+precisa estar no final.
+     ex: git branch | grep r
+     
+     retorno:
+      task-br1  task-br2
+      task-br1  task-br2
+      task-br1  task-br2
+      task-br1  task-br2
+
+o comando grep pode ser usado com varios outros comando faça seus testes. 
