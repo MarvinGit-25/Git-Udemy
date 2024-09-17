@@ -10,7 +10,7 @@ git add -a | add varios arquivos
 
 git rm --cached -> nome de arqui | exclui arquivos rastreados comitado ou não comitado 
 git rm --cached -r .  -> nome de arqui | exclui varios arquivos rastreados comitado ou não comitado 
-git restore --staged -> nome de arqui |exclui arquivos só se já tiverem sido comitados
+git restore --staged -> nome de arqui |exclui arquivos só se já tiverem sido comitados, restore precisa de um ponto de partida que é o HEAD
 git commit | salva no historico do git
 git diff |mostra as midificações dos arquivos que n foram salvos
 git diff --cached | mostra as midificações dos arquivos salvos e não salvos
