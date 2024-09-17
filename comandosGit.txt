@@ -3,7 +3,7 @@ git config --global user.email "email" | cria o email do usuario
 
 git init |inicializa um repositorio git
 git config --global init.defaultBranc nome da brach | muda o nome da branc
-
+git config --global core.editor "code --wait" | configura o editor padrão
 git status | mostra o status do git 
 git add | adiciona os arquivos no git 
 git add -a | add varios arquivos
@@ -25,7 +25,7 @@ git commit --amend --no-edit | cria um novo commit sem alterar a msg do msm.
 git commit --amend | abri o editor de texto para mudar a msg de commit
 git config --global core.editor "nome do editor --wait" | configura o editor padrão do git
 git checkout -> numero do commit | navega pelos commits
-git checkout -> nome do arquivo | volta versão anterior do msm
+git checkout -> nome do arquivo | volta versão anterior do msm arquivo tem que estar rastreado e modificado
 git clean -f | remove arquivos não rastreados pelo git
 git reset --hard | exclui arquivos tanto da area de preparação quanto da area local
 git update-index --skip-worktree index.html | .gitignore passa a rastrear o index.html
