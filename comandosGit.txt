@@ -15,6 +15,7 @@ git commit | salva no historico do git
 git diff |mostra as midificações dos arquivos que n foram salvos
 git diff --cached | mostra as midificações dos arquivos salvos e não salvos
 git log | lista os commits que foram feitos
+git log -p | mostra as diferenças dos jogos com o git log padrão
 git log --oneline | forma reduzida de git log
 git log --stat | lista os commits que foram feitos e as modif dos arquivos
 git log --shortstat | forma reduzida de --stat
