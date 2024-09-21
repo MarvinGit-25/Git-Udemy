@@ -86,7 +86,7 @@ git rebase --abort | aborta o rebase
 git rebase --continue
 git pull --rebase | tras mudanças do repositorio remoto recriando o commit em cima das mudanças que vieram do repositorio remoto sem fazer um commit de merge
 git fetch  origin -> informação | baixa o conteúdo remoto e não altera o estado do repositório local
-git rebase --intaractive |HEAD~ -> quantidade de commits | comprimi varios commits em um só
+git rebase --interactive HEAD~ -> | quantidade de commits | comprimi varios commits em um só
 git cherry-pick -> numero do commit | tras o commit especificado para a brach atual
 git bisect start | nos ajuda a identificar erros nos commits fazendo uma busca ex: c1 c2 c3 c4 c5 c6   c1----c6
 ================Utilidades==================
