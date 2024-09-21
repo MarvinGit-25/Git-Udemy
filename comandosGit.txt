@@ -68,7 +68,7 @@ git tag -d -> nome da tag | apaga a tag localmente
 git push --delete origin -> nome da tag | apaga a tag remotamente
 git stash | salva mudanças que não estao prontas para serem commitadas
 git stash apply | aplica as alterações salvas
-git stash --list | lista as stashs salvas
+git stash list | lista as stashs salvas
 git stash apply -> nome do stash | aplica um stash especifico
 git stash pop | apllica o ultimo stash e remove da lista de stash
 git stash pop -> nome do stash | aplica e remove um stash especifico
